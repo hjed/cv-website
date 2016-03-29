@@ -1,4 +1,8 @@
 <div>
     <div ng-include="'components/pageSummary.html'"></div>
-
+    <div class="container">
+        <div class="row">
+            <cv-normal-blurb sm-width="element.smWidth" md-width="element.mdWidth" title="element.title" body="element.body" ng-repeat="element in elements"></cv-normal-blurb>
+        </div>
+    </div>
 </div>

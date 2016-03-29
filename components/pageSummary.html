@@ -1,11 +1,12 @@
-<div class="page-header">
+<div class="page-header" ng-controller="pageSummary">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-3">
-                IMAGE PLACEHOLDER
+                <img src="{{image}}" alt="{{imageAlt}}" class="img-rounded img-responsive">
             </div>
-            <div class="col-sm-12 col-md-9">
-                Text placeholder
+            <div class="col-sm-12 col-md-9" >
+                <h1>{{title}}</h1>
+                <span ng-bind-html="text"></span>
             </div>
         </div>
     </div>
