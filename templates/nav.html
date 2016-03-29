@@ -19,12 +19,11 @@ Purpose: The nav for the cv website
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <!-- TODO: set active class on current tab using angular location -->
-                    <li class="active"><a href="#">Summary<span class="sr-only">(current)</span></a></li>
-                    <li><a href="/work_experience">Work Experience</a></li>
-                    <li><a href="/projects">Projects</a></li>
-                    <li><a href="/leadership">Leadership</a></li>
-                    <li><a href="/interests">Interests</a></li>
+                    <li class="{{page == 'home' ? 'active' : page }}"><a href="/home">Summary<span class="sr-only">(current)</span></a></li>
+                    <li class="{{page == 'experience' ? 'active' : '' }}"><a href="/experience">Experience and Major Projects</a></li>
+                    <li class="{{page == 'languages' ? 'active' : '' }}"><a href="/languages">Languages</a></li>
+                    <li class="{{page == 'technologies' ? 'active' : '' }}"><a href="/technologies">Technologies</a></li>
+                   <!-- <li class="{{page == 'interests' ? 'active' : '' }}"><a href="/interests">Interests</a></li>-->
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>

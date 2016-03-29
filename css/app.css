@@ -7,6 +7,18 @@ body {
     background-color: black;
     padding-top: 40px;
     padding-bottom: 40px;
-    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 20px;
     color: white;
+}
+.imageBlurb  .row > div {
+    min-height: 4vh;
+    padding-bottom: 1vh;
+}
+
+.imageBlurb  img {
+    max-width: 4vw;
+    max-height: 5vh;
+    margin: auto;
+    display: block;
 }
