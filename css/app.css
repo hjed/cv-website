@@ -21,8 +21,20 @@ body {
     max-height: 5vh;
     margin: auto;
     display: block;
+    
 }
+
+
 
 .normalBlurb  .panel-heading img {
    max-height: 2em;
+   max-width: 5vw;
+   display: block;
+   margin: auto;
+}
+@media (max-width: 600px) {
+    .imageBlurb  img {
+        max-width: 10vw;
+        max-height: 10vh;
+    }
 }
