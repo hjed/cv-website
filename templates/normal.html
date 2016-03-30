@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div ng-repeat="element in elements">
-                <cv-normal-blurb id="{{element.id}}" sm-width="element.smWidth" md-width="element.mdWidth" title="element.title" body="element.body" ng-if="element.type=='normal'"></cv-normal-blurb>
+                <cv-normal-blurb id="{{element.id}}" sm-width="element.smWidth" image="element.image" md-width="element.mdWidth" title="element.title" body="element.body" ng-if="element.type=='normal'"></cv-normal-blurb>
                 <cv-image-blurb  id="{{element.id}}" sm-width="element.smWidth" images="element.images" md-width="element.mdWidth" title="element.title" body="element.body" ng-if="element.type=='image'"></cv-image-blurb>
             </div>
         </div>

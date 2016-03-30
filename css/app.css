@@ -22,3 +22,7 @@ body {
     margin: auto;
     display: block;
 }
+
+.normalBlurb  .panel-heading img {
+   max-height: 2em;
+}

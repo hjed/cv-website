@@ -21,7 +21,8 @@ app.directive('cvNormalBlurb',  function() {
             smWidth : "=smWidth",
             mdWidth : "=mdWidth",
             title   : "=title",
-            body    : "=body"
+            body    : "=body",
+            image   : "=image"
         },
         templateUrl: function(elem, attr) {
             return "components/normalBlurb.html";
@@ -215,7 +216,10 @@ app.controller('DefaultViewController', ['$scope','$rootScope','$routeParams','$
                mdWidth: "12",
                title: "C++",
                id: "c_plus_plus",
-               body: $sce.trustAsHtml("test?"),
+               body: $sce.trustAsHtml(
+                   "<p>My experience in C++ comes primarily from my work at <a href='/experience#bluesat'>BLUEsat</a>, where for the past two plus years I have been working on code for BLUEsat's 'Mars Rover'.  </p>" +
+                   "<p>This code was used at the European Rover Challenge in 2015, and has since undergone signifcant improvements. The code is available to the public on <a href='https://github.com/bluesat/owr_software'>GitHub</a>.</p>"
+               ),
                type: "normal"
             },
             {
@@ -330,7 +334,14 @@ app.controller('DefaultViewController', ['$scope','$rootScope','$routeParams','$
                mdWidth: "12",
                title: "Software Development Intern at The Gingerbread Man",
                id: "tgm",
-               body: $sce.trustAsHtml("test?"),
+               body: $sce.trustAsHtml(
+                   "Member of a six-person development team, working in technologies including Unity, C#, Python, PHP, and WordPress. Major projects include:</p>"+
+                   "<ul>" +
+                   "<li>Ongoing work on a large location based mobile application using Unity and Google App Engine (14K lines code base). Including being the primary developer on the server architecture. </li>" +
+                   "<li>The Google App Engine based backend of an application interfacing with social media APIs.</li>" +
+                   "<li>Developing a CMS designed for a top ten real-estate website using Google App Engine, and Angular JS.</li>" +
+                   "</ul>"
+                ),
                type: "normal"
             },
             {
@@ -338,7 +349,49 @@ app.controller('DefaultViewController', ['$scope','$rootScope','$routeParams','$
                mdWidth: "12",
                title: "Software Team Lead at BLUEsat UNSW, Off-World Robotics Division",
                id: "bluesat",
-               body: $sce.trustAsHtml("test?"),
+               image : "/img/logos/bluesat.png",
+               body: $sce.trustAsHtml(
+                   "<p>Working as a senior member of the BLUEsat OWR team to develop a Mars Rover to compete in the European Rover Challenge (ERC).</p>" +
+                   "<ul>" +
+                   "<li>The team placed 15th out of 40 teams at the 2015 ERC in Poland.</li>" +
+                   "<li>Responsible for software related task allocation and documentation, managed using Atlassian JIRA and Confluence. </li>" +
+                   "<li>Oversaw a successful transition to agile methodology.</li>" + 
+                   "<li>Managed the growth of the software team from 4 to 12 developers.</li>" +
+                   "<li>Significant contribution to the project’s C++ and Python code base.</li>" +
+                   "<li>Significant contribution to the design of the software systems.</li>" +
+                   "</ul>"
+               ),
+               type: "normal"
+            },
+            {
+               smWidth: "12",
+               mdWidth: "12",
+               title: "Academic Tutor at UNSW Australia",
+               id: "tutor",
+               body: $sce.trustAsHtml(
+                   "<p>University tutor for three semesters, teaching classes that consist of a one-hour tutorial followed by a two-hour lab.</p>" +
+                   "<ul>" +
+                   "<li>" +
+                   "Semester 1, 2015" +
+                   "<ul>" +
+                   "<li>2x Computing 1A</li>" +
+                   "<li>1x Assistant Tutor in Computing 1 (Volunteer Role)</li>" +
+                   "</ul>" +
+                   "</li>" +
+                   "<li>" +
+                   "Semester 2, 2015" +
+                   "<ul>" +
+                   "<li>2x Computing 2</li>" +
+                   "</ul>" +
+                   "</li>" +
+                   "<li>" +
+                   "Semester 1, 2016" +
+                   "<ul>" +
+                   "<li>1x Computing 1</li>" +
+                   "</ul>" +
+                   "</li>" +
+                   "</ul>"
+               ),
                type: "normal"
             },
             {
@@ -346,7 +399,12 @@ app.controller('DefaultViewController', ['$scope','$rootScope','$routeParams','$
                mdWidth: "12",
                title: "Patrol Leader at Scouts Australia, NSW Branch State Youth Council (SYC)",
                id: "syc",
-               body: $sce.trustAsHtml("test?"),
+               body: $sce.trustAsHtml(
+                   "<ul>" +
+                   "<li>On the organising team for four successful State Youth Council biannual conferences.</li>" +
+                   "<li>Responsible for organising regular teleconferences, and managing patrol workload.</li>" +
+                   "</ul>"
+               ),
                type: "normal"
             },
             {
@@ -354,7 +412,14 @@ app.controller('DefaultViewController', ['$scope','$rootScope','$routeParams','$
                mdWidth: "12",
                title: "Topic Team Leader for Stage Three of Scouts Australia's Youth Program Review (YPR)",
                id: "ypr",
-               body: $sce.trustAsHtml("test?"),
+               body: $sce.trustAsHtml(
+                   "<p>Responsible for leading one of the eight, ten-person topic teams working on stage three of Scouts Australia’s Youth Program Review.</p>" +
+                   "<ul>"+
+                   "<li>Team was responsible for researching and reporting on the Scout Method.</li>" + 
+                   "<li> Responsible for co-ordinating with other teams across Australia. </li>" +
+                   "<li>Working with member of the association to identify needed change.</li>" +
+                   "<li>Findings presented to National Youth Program Team, the Chief Commissioner of Scouts Australia, and Chief Commissioners from a number of state branches.</li>"
+               ),
                type: "normal"
             },
             {
@@ -362,7 +427,12 @@ app.controller('DefaultViewController', ['$scope','$rootScope','$routeParams','$
                mdWidth: "12",
                title: "Treasurer at The Security Society of UNSW",
                id: "secsoc",
-               body: $sce.trustAsHtml("test?"),
+               body: $sce.trustAsHtml(
+                   "<ul>" +
+                   "<li>Active in getting the society up and runng again.</li>" +
+                   "<li>Responsible for managing the society budget and bank account.</li>"+
+                   "</ul>"
+               ),
                type: "normal"
             },
         ]
