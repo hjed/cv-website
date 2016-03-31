@@ -22,7 +22,8 @@ app.directive('cvNormalBlurb',  function() {
             mdWidth : "=mdWidth",
             title   : "=title",
             body    : "=body",
-            image   : "=image"
+            image   : "=image",
+            elid     : "=elid",
         },
         templateUrl: function(elem, attr) {
             return "components/normalBlurb.html";
@@ -39,6 +40,7 @@ app.directive('cvImageBlurb',  function() {
             title   : "=title",
             body    : "=body",
             images   : "=images",
+            elid     : "=elid",
         },
         templateUrl: function(elem, attr) {
             return "components/imageBlurb.html";
@@ -55,12 +57,17 @@ app.controller('Main', ['$scope','$rootScope','$routeParams', function($scope,$r
         },
         function() {
             $scope.page = $routeParams.page;
-            console.log($scope.page);
+            /*console.log*/($scope.page);
         }
     );
 }]);
 
-app.controller('DefaultViewController', ['$scope','$rootScope','$routeParams','$sce', function($scope,$rootScope,$routeParams,$sce) {
+app.run(['$anchorScroll', function($anchorScroll) {
+  $anchorScroll.yOffset =50;   // always scroll by 50 extra pixels
+//   console.log("Scrolling");
+}])
+
+app.controller('DefaultViewController', ['$scope','$rootScope','$routeParams','$sce','$anchorScroll','$location','$route','$timeout', function($scope,$rootScope,$routeParams,$sce,$anchorScroll,$location,$route,$timeout) {
     
     //Data structure to hold the different pages, ideally this would be in a database or hooked up to an api
     //But there isn't enought time for me to code that
@@ -174,7 +181,7 @@ app.controller('DefaultViewController', ['$scope','$rootScope','$routeParams','$
                    "<h4>Oct 2014 – Present</h4>"+
                    "<a href='/experience#tgm'>Software Development Intern at The Gingerbread Man</a><br/>"+
                    "<h4>Feb 2014 – Present</h4>"+
-                   "<a href='/experience#syc'>State Youth Council PatrolLeader at Scouts Australia, NSW Branch</a>"
+                   "<a href='/experience#syc'>State Youth Council Patrol Leader at Scouts Australia, NSW Branch</a>"
                ),
                type: "normal"
             },
@@ -496,11 +503,11 @@ app.controller('DefaultViewController', ['$scope','$rootScope','$routeParams','$
             },
         ]
     };
-    
+
     page = $routeParams.page;
-    console.log(page);
+//     console.log(page);
     $scope.elements = PAGES[page];
-    console.log($scope.elements);
+//     console.log($scope.elements);
     
 }]);
 
@@ -561,7 +568,9 @@ app.controller('pageSummary', ['$scope','$rootScope','$sce','$routeParams', func
     $scope.text  =  PAGE_SUMMARIES[page]["text"];
 }]);
 
-app.controller('imageBlurb', ['$scope','$rootScope','$window', function($scope,$rootScope,$window) {
-    
+app.controller('blurb', ['$anchorScroll','$timeout','$location', function($anchorScroll,$timeout,$location) {
+     $timeout(function() {
+           $anchorScroll();
+     });
 }]);
 
